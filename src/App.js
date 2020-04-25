@@ -9,19 +9,23 @@ import ContactPage from './components/pages/ContactPage';
 import CartPage from './components/pages/CartPage';
 import Default from './components/pages/Default';
 import SingleProductPage from './components/pages/SingleProductPage';
+import {Route, Switch} from 'react-router-dom';
 
 
 function App() {
   return (
     <>
-    <HomePage/>
-    <AboutPage />
-    <ProductsPage/>
-    <ContactPage />
-    <CartPage />
-    <Default/>
-    <SingleProductPage />
-    <h1>hello from store </h1>
+    {/* navbar,sidebar,cart,footer */}
+      <Switch>
+        <Route path="/" excat component={HomePage} />
+        <Route path="/about"  component={AboutPage} />
+        <Route path="/contact"  component={ContactPage} />
+        <Route path="/products" excat component={ProductsPage} />
+        <Route path="/products/:id"  component={SingleProductPage} />
+        <Route path="/cart"  component={CartPage} />
+        <Route component={Default} />
+
+      </Switch>
     </>
     
   );
