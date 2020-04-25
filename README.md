@@ -3,7 +3,7 @@ Store app that uses React JS and :
 - React Icons
 - Bootstrap
 - Styled Components
-
+- Context API
 
 
 
