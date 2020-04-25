@@ -2,20 +2,26 @@ import React from 'react';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import HomePage from './components/pages/HomePage';
-import AboutPage from './components/pages/AboutPage';
-import ProductsPage from './components/pages/ProductsPage';
-import ContactPage from './components/pages/ContactPage';
-import CartPage from './components/pages/CartPage';
-import Default from './components/pages/Default';
-import SingleProductPage from './components/pages/SingleProductPage';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ProductsPage from './pages/ProductsPage';
+import ContactPage from './pages/ContactPage';
+import CartPage from './pages/CartPage';
+import Default from './pages/Default';
+import SingleProductPage from './pages/SingleProductPage';
 import {Route, Switch} from 'react-router-dom';
-
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import SideCart from './components/SideCart';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <>
     {/* navbar,sidebar,cart,footer */}
+    <Navbar />
+    <Sidebar />
+    <SideCart />
       <Switch>
         <Route path="/" excat component={HomePage} />
         <Route path="/about"  component={AboutPage} />
@@ -26,6 +32,7 @@ function App() {
         <Route component={Default} />
 
       </Switch>
+    <Footer/>
     </>
     
   );
