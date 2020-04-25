@@ -1,3 +1,14 @@
+Store app that uses React JS and :
+- React Router Dom
+- React Icons
+- Bootstrap
+- Styled Components
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
