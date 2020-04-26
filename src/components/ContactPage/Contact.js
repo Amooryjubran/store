@@ -8,14 +8,14 @@ export default function Contact() {
         <div className="row">
           <div className="col-10 mx-auto col-md-6 my-3">
             <Title title="contact us" />
-            <form className="mt-5">
+            <form className="mt-5" action="https://formspree.io/omarsalehjubran@gmail.com" method="POST">
               {/* first */}
               <div className="form-group">
                 <input
                   type="text"
                   name="firstName"
                   className="form-control"
-                  placeholder="john smith"
+                  placeholder="Your Name"
                 />
               </div>
               {/* email */}
@@ -24,7 +24,7 @@ export default function Contact() {
                   type="email"
                   name="email"
                   className="form-control"
-                  placeholder="email@email.com"
+                  placeholder="Your Email"
                 />
               </div>
               {/* subject */}
@@ -33,7 +33,7 @@ export default function Contact() {
                   type="text"
                   name="subject"
                   className="form-control"
-                  placeholder="important!!!!"
+                  placeholder="Title"
                 />
               </div>
               {/* message */}
@@ -42,8 +42,12 @@ export default function Contact() {
                   name="message"
                   className="form-control"
                   rows="10"
-                  placeholder="hello there buddy"
+                  placeholder="Your Request ...."
                 />
+              </div>
+              {/* submit method*/}
+              <div className="form-goup mt-3">
+                  <input type="submit" value="Send" className="form-control bg-primary text-white"/>
               </div>
             </form>
           </div>
