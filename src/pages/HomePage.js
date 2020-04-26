@@ -7,7 +7,7 @@ export default function HomePage() {
     return (
         <>
             <Hero title="awesome gadgets">
-                <Link to ="/products">out products</Link>
+                <Link to ="/products" style={{margin: '2rem'}} className="main-link">out products</Link>
             </Hero>
         </>
     )
