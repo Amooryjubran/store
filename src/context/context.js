@@ -11,7 +11,6 @@ class ProductProvider extends Component {
   state ={
     sidebarOpen: false,
     cartOpen: false,
-    cartItems: 21,
     links: linkData,
     socialIcons: socialDate,
     cart: [],
@@ -22,8 +21,67 @@ class ProductProvider extends Component {
     filteredProducts: [],
     featuredProducts: [],
     singleProducts: {},
-    loading: true
+    loading: false
   };
+
+  componentDidMount() {
+    // from contenful items
+    this.setProducts(items);
+  }
+
+  // set products
+  setProducts = (products) => {
+    let storeProducts = products.map(item => {
+      const {id} = item.sys;
+      const product = {id, ...item.fields};
+      return product
+    })
+    // featured products
+    let featuredProducts = storeProducts.filter(item => item.featured === true);
+    this.setState({
+      storeProducts,
+      filteredProducts:storeProducts,
+      featuredProducts,
+      cart: this.getStoreCart(),
+      singleProducts:this.getStorageProduct(),
+      loading: false
+    });
+    
+  };
+
+  // add to cart
+  addToCart = (id) => {
+    console.log(`add to cart ${id}`);
+    
+  }
+  // set single product
+  setSingleProduct = (id) => {
+    console.log(`set single products ${id}`);
+    
+  }
+
+    // get cart from local storage
+  getStoreCart = () => {
+    return [];
+  }
+// get product from local storage
+  getStorageProduct = () => {
+    return {};
+  };
+
+  // get totals
+  getTotals = () => {};
+
+    // add totals 
+    getTotals = () => {};
+
+    // sync storage
+    syncStorage = () => {
+
+    }
+    
+
+
   // handle side bar
   handleSidebar = () => {
     this.setState({sidebarOpen:!this.state.sidebarOpen})
@@ -49,7 +107,9 @@ class ProductProvider extends Component {
         handleSidebar: this.handleSidebar,
         handleCart: this.handleCart,
         closeCart: this.closeCart,
-        openCart: this.openCart
+        openCart: this.openCart,
+        addToCart: this.addToCart,
+        setSingleProduct: this.setSingleProduct
       }}>
         {this.props.children}
       </ProductContext.Provider>
