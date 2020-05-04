@@ -4,7 +4,7 @@ Store app that uses React JS and :
 - Bootstrap
 - Styled Components
 - Context API
-- For contacting me I used Formspree
+- For the contact page, I used Formspree
 
 
 
